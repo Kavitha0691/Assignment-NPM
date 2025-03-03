@@ -1,0 +1,74 @@
+<main>
+    <!-- Render Main Section -->
+    <% if (gymPage.mainSection) { %>
+        <section class="main_section">
+            <div class="image-wrapper">
+                <img src="<%= gymPage.mainSection.imageUrl %>" alt="gym image" class="main-image">
+                <div class="main_message">
+                    <h2 class="main_h2"><%= gymPage.mainSection.title %></h2>
+                    <p><%= gymPage.mainSection.description %></p>
+                </div>
+            </div>
+        </section>
+    <% } else { %>
+        <p>Main section data is missing!</p>
+    <% } %>
+
+    <!-- Render Strong Mama Section -->
+    <% if (gymPage.strongMamaSection) { %>
+        <section class="strong-mama-section">
+            <img src="<%= gymPage.strongMamaSection.imageUrl %>" alt="Strong Mama" />
+            <div class="strong-mama-container">
+                <h2 class="strong-mama-title"><%= gymPage.strongMamaSection.title %></h2>
+                <p class="strong-mama-subtitle"><%= gymPage.strongMamaSection.subtitle %></p>
+                <p><%= gymPage.strongMamaSection.description %></p>
+                <div class="course-info">
+                    <% gymPage.strongMamaSection.details.courseInfo.forEach(info => { %>
+                        <p><%= info.label %>: <strong><%= info.value %></strong></p>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+    <% } else { %>
+        <p>Strong Mama Section is not available at the moment.</p>
+    <% } %>
+
+    <!-- Render Popular Classes -->
+<% if (gymPage.popularClasses && gymPage.popularClasses.length > 0) { %>
+    <section class="popular-classes-section">
+        <h2>Popular Classes</h2>
+        <div class="popular-container">
+            <div class="class-list">
+                <% gymPage.popularClasses.forEach(classItem => { %>
+                    <p class="class-item"><%= classItem.name %></p>
+                <% }) %>
+            </div>
+            <!-- Slideshow -->
+            <div class="slideshow">
+                <img id="slideshow-img" class="slideshow-img" src="/images/workout1.jpg" alt="Workout Image">
+            </div>
+        </div>
+    </section>
+<% } else { %>
+    <p>No popular classes available at the moment.</p>
+<% } %>
+
+    <!-- Render Trainers -->
+<% if (gymPage.trainers && gymPage.trainers.length > 0) { %>
+    <section class="trainers-section">
+        <h2>Meet Our Trainers</h2>
+        <div class="trainers-list">
+            <% gymPage.trainers.forEach(trainer => { %>
+                <div class="trainer-card"> 
+                    <img src="<%= trainer.image %>" alt="<%= trainer.name %>" class="trainer-image">
+                    <p class="trainer-name"><%= trainer.name %></p>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+<% } else { %>
+    <p>No trainers available at the moment.</p>
+<% } %>     
+</main>
+
+<script src="/script/main.js"></script> 

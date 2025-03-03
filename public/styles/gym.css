@@ -1,0 +1,105 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.gym-container {
+    display: flex;
+    gap: 20px;
+}
+
+.gym-sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.gym-h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;   
+}
+
+.gym__description {
+    font-size: 1.2rem;
+}
+
+.gym__content, .gym_main img{
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+   
+}
+
+.gym__content ul li {
+    font-size: 1rem;
+    padding: 50px;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    padding: 10px;
+    background-image: url(/images/gymback.jpg);
+}
+
+@media screen and (max-width: 768px) {
+    .gym-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gym-sidebar {
+        width: 90%;
+        text-align: center;
+    }
+
+    .gym__content {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gym-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .gym-sidebar {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .gym__description {
+        font-size: 1rem;
+    }
+
+    .gym__content ul li {
+        padding: 20px;
+    }
+
+    .gym__content {
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .main-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+}

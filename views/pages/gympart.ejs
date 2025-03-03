@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head', { title: headTitle }) %>
+<body>
+    <%- include('../partials/header') %> <!-- Header -->
+    <%- include("../partials/navigation.ejs") %> <!-- Navigation -->
+
+    <div class="main-container">
+      <%- include('../partials/sidebar', { allFeatures: allFeatures }) %>  <!-- Sidebar -->
+
+      <!-- Main Content -->
+      <main class="gym_main">
+        <h1 class="gym-h1"><%= locals.title || "Gym Information" %></h1>
+        <p class="gym__description"><%= locals.description || "" %></p>
+
+        <% if (featureData) { %>     
+          <ul class="gym__content">
+            <li><b>Description:</b> <%= featureData.description || "No description" %></li>
+            <li><b>Benefits:</b> <%= featureData.benefits.join(", ") || "No benefits" %></li>
+            <li><b>Price:</b> <%= featureData.price || "No price" %></li>
+            <li><b>Category:</b> <%= featureData.category || "No category" %></li>
+          </ul>
+        <% } %>
+      </main>
+    </div>
+    <%- include('../partials/footer') %>
+    <script src="/script/main.js"></script>
+</body>
+</html>

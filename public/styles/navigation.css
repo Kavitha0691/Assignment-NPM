@@ -1,0 +1,106 @@
+.navigation-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: white;
+    justify-content: space-around;
+    gap: 1.5rem;
+    position: relative;
+    background-color: black;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: row;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: white;
+    padding: clamp(0.5rem, 1.5vw, 1rem);
+    border-radius: 10px;
+    position: relative;
+    transition: font-size 0.5s ease-in-out, color 0.5s ease-in-out, text-decoration 0.5s ease-in-out;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    width: 120px;
+}
+
+.nav-link::after,
+.nav-link::before {
+    content: attr(data-tooltip1);
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(172, 194, 184);
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    width: 150px;
+    height: auto;
+    white-space: nowrap;
+}
+
+.nav-link::after {
+    content: attr(data-tooltip1);
+    font-size: 1rem;
+}
+
+.nav-link::before {
+    content: attr(data-tooltip2);
+    bottom: -90px; 
+    left: 50%;
+    font-size: 1rem; 
+}
+
+.nav-link:hover::after,
+.nav-link:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav-link:hover {
+    text-decoration: underline solid rgb(19, 222, 8);
+    background-color: rgb(57, 58, 56);
+    border-radius: 10px;
+    font-size: 1.6rem;
+}
+
+@media screen and (max-width: 768px) {
+    .navigation-container {
+        align-items: center;
+        padding: 0.5rem;
+        gap: 1rem;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navigation-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    .menu-logo {
+        display: block;
+        width: 40px;
+    }
+}

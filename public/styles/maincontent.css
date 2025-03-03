@@ -1,0 +1,293 @@
+.main_section {
+    position: relative; 
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.main_message {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    text-align: center; 
+    padding: 20px;
+    width: 90%; 
+}
+
+.main_h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.main_message p {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.strong-mama-section {
+    background-color: white; 
+    padding-top: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.strong-mama-container {
+    margin: 0 auto;
+}
+
+.strong-mama-title {
+    font-size: 2.5rem;
+    color: black;
+    font-weight: bold;
+}
+
+.strong-mama-subtitle {
+    font-size: 2rem;
+    color: black;
+    font-style: italic;
+}
+
+.strong-mama-subtitle p {
+    font-size: 2rem;
+    padding: 40px;
+}
+
+.popular-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.slideshow-img {
+    width: 800px;
+    height: auto;
+
+}
+
+.class-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; 
+    padding: 20px;
+}
+
+.class-item {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.slideshow {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideshow img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.course-info p {
+    font-size: 1.1rem;
+    color: black;
+    margin: 5px 0;
+}
+
+.popular-classes {
+    padding: 2rem;
+    background: #f4f4f4;
+}
+
+.popular-classes h2 {
+    padding-left: 150px;
+}
+
+.class-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.popular-classes-section, .strong-mama-section {
+    border-bottom: solid rgb(198, 215, 172) 2px;
+}
+
+.class-item {
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    width: 250px;
+}
+
+
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.section {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.trainers-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.trainers-list {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding: 50px;
+}
+
+.trainer-card {
+    padding-right: 80px;
+}
+
+.trainer-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.trainers-section h2 {
+    color: black;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.trainer-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* Training Programs Grid */
+.training-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .strong-mama-section {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .popular-classes h2 {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .popular-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .slideshow-img {
+        width: 100%;
+    }
+
+    .class-list {
+        grid-template-columns: 1fr;
+    }
+
+    .trainers-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .trainer-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .training-container {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .main_h2 {
+        font-size: 2rem;
+    }
+
+    .main_message p {
+        font-size: 1.5rem;
+    }
+
+    .popular-classes h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .class-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .slideshow-img {
+        width: 100%;
+    }
+
+    .trainer-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .trainers-list {
+       flex-direction: column;
+    }
+
+    .footer {
+        padding: 1rem;
+        text-align: center;
+    }
+}

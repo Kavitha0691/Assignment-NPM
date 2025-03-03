@@ -1,0 +1,20 @@
+<aside class="sidebar">
+  <% if (sidebarLinks && sidebarLinks.length > 0) { %>
+    <% sidebarLinks.forEach(feature => { 
+      let href = ""; // Initialize empty href
+      if (facilities.some(f => f.slug === feature.slug)) { 
+        href = `/facility/${feature.slug}`;  // Facility link
+      } else if (allFeatures.some(b => b.slug === feature.slug && b.category === "Booking")) {  
+        href = `/book/${feature.slug}`;  // Booking link
+      } else { 
+        href = `/gym/${feature.slug}`;  // Default gym feature link
+      }
+    %>
+      <a href="<%= href %>" class="sidebar-btn" data-feature-details="<%= JSON.stringify(feature) %>">
+        <%= feature.name %>
+      </a>
+    <% }) %>
+  <% } else { %>
+    <p>No features available</p>
+  <% } %>
+</aside>
